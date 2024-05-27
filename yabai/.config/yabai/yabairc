@@ -1,0 +1,48 @@
+#!/usr/bin/env sh
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+
+yabai -m config layout bsp
+
+# padding and gaps
+yabai -m config window_gap 	10
+yabai -m config top_padding    	5
+yabai -m config bottom_padding 	5
+yabai -m config left_padding   	5
+yabai -m config right_padding  	5
+
+# border
+yabai -m config window_border                on
+yabai -m config window_border_width          6
+yabai -m config active_window_border_color   0xff775759
+yabai -m config normal_window_border_color   0xff555555
+yabai -m config insert_feedback_color        0xffd75f5f
+
+# set mouse interaction modifier key (default: fn)
+yabai -m config mouse_modifier fn
+
+# set modifier + left-click drag to resize window (default: move)
+yabai -m config mouse_action1 move
+
+# set modifier + right-click drag to resize window (default: resize)
+yabai -m config mouse_action2 resize
+
+yabai -m config focus_follows_mouse autofocus
+
+# splited config 
+find "${HOME}/.config/yabai/custom" -type f -perm +111 -exec {} \;
+
+# spacebar
+SPACEBAR_HEIGHT=38
+yabai -m config external_bar all:$SPACEBAR_HEIGHT:0
+
+# rules
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Feishu$" manage=off
+yabai -m rule --add app="^QQ$" manage=off
+yabai -m rule --add app="^WeChat$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Seal$" manage=off
+
