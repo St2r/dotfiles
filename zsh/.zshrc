@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,7 +71,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-nvm nvm)
+plugins=(
+  git
+#  zsh-nvm
+  nvm
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,12 +116,13 @@ export proxy_all=socks5://$PROXY_ADDR
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# rust env
-source "$HOME/.cargo/env"
-
 # JAVA_OPTS="$JAVA_OPTS -DsocksProxyPort"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # lunar vim
 export PATH=$HOME/.local/bin/:$PATH
+
+# lazygit
+alias lg="lazygit"
+
