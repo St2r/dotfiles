@@ -214,6 +214,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	require("plugins.lazygit"),
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	-- Detect tabstop and shiftwidth automatically
 	-- {
