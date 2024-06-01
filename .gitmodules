@@ -10,3 +10,6 @@
 [submodule "zsh/.oh-my-zsh-custom/patches/zsh-syntax-highlighting"]
 	path = zsh/.oh-my-zsh-custom/patches/zsh-syntax-highlighting
 	url = https://github.com/catppuccin/zsh-syntax-highlighting.git
+[submodule "lazygit/.config/lazygit/catppuccin-lazygit"]
+	path = lazygit/.config/lazygit/catppuccin-lazygit
+	url = https://github.com/catppuccin/lazygit.git

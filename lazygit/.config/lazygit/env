@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+export LG_CONFIG_FOLDER="$HOME/.config/lazygit"
+export LG_CONFIG_FILE="$LG_CONFIG_FOLDER/config.yml,$LG_CONFIG_FOLDER/catppuccin-lazygit/themes-mergable/mocha/green.yml"
