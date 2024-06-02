@@ -7,4 +7,5 @@ stow -t ~ sketchybar
 stow -t ~ nvim
 stow -t ~ zsh
 stow -t ~ lazygit
+stow -t ~ yazi
 
