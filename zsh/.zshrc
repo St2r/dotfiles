@@ -113,7 +113,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if lsof -i:7890 | grep LISTEN >/dev/null 2>&1; then
+if lsof -i:7890 >/dev/null 2>&1; then
   PROXY_ADDR=127.0.0.1:7890
   export https_proxy=http://$PROXY_ADDR
   export http_proxy=http://$PROXY_ADDR
