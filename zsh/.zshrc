@@ -113,11 +113,14 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-PROXY_ADDR=127.0.0.1:7890
-export https_proxy=http://$PROXY_ADDR
-export http_proxy=http://$PROXY_ADDR
-export all_proxy=socks5://$PROXY_ADDR
-export proxy_all=socks5://$PROXY_ADDR
+if lsof -i:7890 | grep LISTEN >/dev/null 2>&1; then
+  PROXY_ADDR=127.0.0.1:7890
+  export https_proxy=http://$PROXY_ADDR
+  export http_proxy=http://$PROXY_ADDR
+  export all_proxy=socks5://$PROXY_ADDR
+  export proxy_all=socks5://$PROXY_ADDR
+fi
+
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
