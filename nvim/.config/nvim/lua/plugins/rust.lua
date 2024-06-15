@@ -1,3 +1,5 @@
+if true then return {} end
+
 return {
 	"mrcjkb/rustaceanvim",
 	version = "^4",
