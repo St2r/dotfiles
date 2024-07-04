@@ -135,3 +135,6 @@ export PATH=$HOME/.local/bin/:$PATH
 # lazygit
 alias lg="lazygit"
 
+# java
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
