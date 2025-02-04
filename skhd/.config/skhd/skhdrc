@@ -25,7 +25,7 @@
 #                   yabai -m space --focus "${index}"
 
 # focus desktop
-ctrl + alt + cmd - left  : yabai -m display --focus next
+ctrl + alt + cmd - left : yabai -m display --focus next
 ctrl + alt + cmd - right : yabai -m display --focus prev
 ctrl + alt + cmd - 1 : yabai -m display --focus 1
 ctrl + alt + cmd - 2 : yabai -m display --focus 2
@@ -47,9 +47,9 @@ ctrl - right : yabai -m space --focus next
 ctrl - n : yabai -m space --create
 
 # manage window
-ctrl + alt - up    : yabai -m window --swap north
-ctrl + alt - down  : yabai -m window --swap south
-ctrl + alt - left  : yabai -m window --swap west
+ctrl + alt - up : yabai -m window --swap north
+ctrl + alt - down : yabai -m window --swap south
+ctrl + alt - left : yabai -m window --swap west
 ctrl + alt - right : yabai -m window --swap east
 ctrl + alt - pageup : yabai -m space --rotate 90
 ctrl + alt - pagedown : yabai -m space --rotate 270
@@ -96,3 +96,16 @@ alt - t : yabai -m window --toggle float
 # alt - p : yabai -m window --toggle sticky;\
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
+
+# open kitty
+cmd - return : open -a /Applications/kitty.app/Contents/MacOS/kitty
+
+# toggle sketchey bar
+ctrl - f : eval "\
+    if [ \$(yabai -m config external_bar) = 'all:0:0' ]; then \
+        yabai -m config external_bar all:38:0; \
+        sketchybar --bar hidden=off; \
+    else \
+        yabai -m config external_bar all:0:0; \
+        sketchybar --bar hidden=on; \
+    fi"
