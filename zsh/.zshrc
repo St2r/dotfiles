@@ -127,11 +127,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# lunar vim
-export PATH=$HOME/.local/bin/:$PATH
-
 # lazygit
 alias lg="lazygit"
 
 # java
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
+# alias
+alias n="nvim"
+alias f="fzf"
