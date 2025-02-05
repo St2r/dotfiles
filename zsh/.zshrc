@@ -1,8 +1,6 @@
+# nvm 
 zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd rush rushx git
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+zstyle ':omz:plugins:nvm' lazy-cmd nvm node rush rushx git
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -137,4 +135,3 @@ alias lg="lazygit"
 
 # java
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-
