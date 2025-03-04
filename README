@@ -7,3 +7,21 @@ lazygit
 yazi
 android-platform-tools
 bazel
+
+
+## setup solana
+
+**solana cli**
+```zsh
+sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
+```
+
+**avm**
+``` zsh
+cargo install --git https://github.com/coral-xyz/anchor avm --force
+```
+
+**anchor**
+``` zsh
+avm install latest
+```
