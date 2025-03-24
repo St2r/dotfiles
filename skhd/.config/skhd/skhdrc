@@ -98,7 +98,7 @@ alt - t : yabai -m window --toggle float
 #           yabai -m window --toggle pip
 
 # open kitty
-cmd - return : open -a /Applications/kitty.app/Contents/MacOS/kitty
+ctrl - return : open -a /Applications/kitty.app/Contents/MacOS/kitty
 
 # toggle sketchey bar
 ctrl - f : eval "\

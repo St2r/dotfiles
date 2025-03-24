@@ -9,3 +9,7 @@ stow -t ~ zsh
 stow -t ~ lazygit
 stow -t ~ yazi
 stow -t ~ fish
+stow -t ~ hammerspoon
+
+# defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
+

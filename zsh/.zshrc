@@ -1,3 +1,9 @@
+if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+  export THEME_MODE="dark"
+else
+  export THEME_MODE="light"
+fi
+
 # nvm 
 zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:plugins:nvm' lazy-cmd nvm node rush rushx git
@@ -6,7 +12,26 @@ zstyle ':omz:plugins:nvm' lazy-cmd nvm node rush rushx git
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
-source "$ZSH_CUSTOM/patches/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
+# Function to update theme based on system appearance
+update_theme() {
+  if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+    export THEME_MODE="dark"
+    source "$ZSH_CUSTOM/patches/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
+  else
+    export THEME_MODE="light"
+    source "$ZSH_CUSTOM/patches/zsh-syntax-highlighting/themes/catppuccin_latte-zsh-syntax-highlighting.zsh"
+  fi
+}
+
+# Initial theme setup
+update_theme
+
+# Set up trap to update theme when terminal receives SIGUSR1
+trap update_theme SIGUSR1
+
+# You can trigger theme update by running: kill -SIGUSR1 $$
+# To automate this when system theme changes, you'll need to set up a separate
+# script or service that detects theme changes and sends SIGUSR1 to terminal processes
 
 source "$HOME/.config/lazygit/env"
 
