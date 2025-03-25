@@ -153,3 +153,4 @@ export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 # alias
 alias n="nvim"
 alias f="fzf"
+alias rm="trash"
