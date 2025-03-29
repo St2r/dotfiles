@@ -1,4 +1,9 @@
 #!/bin/zsh
 
 export LG_CONFIG_FOLDER="$HOME/.config/lazygit"
-export LG_CONFIG_FILE="$LG_CONFIG_FOLDER/config.yml,$LG_CONFIG_FOLDER/catppuccin-lazygit/themes-mergable/mocha/green.yml"
+
+if [[ "$THEME_MODE" == "dark" ]]; then
+  export LG_CONFIG_FILE="$LG_CONFIG_FOLDER/config.yml,$LG_CONFIG_FOLDER/catppuccin-lazygit/themes-mergable/mocha/green.yml"
+else
+  export LG_CONFIG_FILE="$LG_CONFIG_FOLDER/config.yml,$LG_CONFIG_FOLDER/catppuccin-lazygit/themes-mergable/latte/green.yml"
+fi

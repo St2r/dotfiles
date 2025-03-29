@@ -9,8 +9,10 @@ export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 # Function to update theme based on system appearance
 update_theme() {
   if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+    export THEME_MODE="dark"
     source "$ZSH_CUSTOM/patches/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
   else
+    export THEME_MODE="light"
     source "$ZSH_CUSTOM/patches/zsh-syntax-highlighting/themes/catppuccin_latte-zsh-syntax-highlighting.zsh"
   fi
 }
