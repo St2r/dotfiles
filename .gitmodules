@@ -13,3 +13,6 @@
 [submodule "lazygit/.config/lazygit/catppuccin-lazygit"]
 	path = lazygit/.config/lazygit/catppuccin-lazygit
 	url = https://github.com/catppuccin/lazygit.git
+[submodule "btop/.config/btop/cappuccin-btop"]
+	path = btop/.config/btop/cappuccin-btop
+	url = git@github.com:catppuccin/btop.git

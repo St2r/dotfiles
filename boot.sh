@@ -10,6 +10,7 @@ stow -t ~ lazygit
 stow -t ~ yazi
 stow -t ~ fish
 stow -t ~ hammerspoon
+stow -t ~ btop
 
 # defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
 
