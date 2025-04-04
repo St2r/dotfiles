@@ -16,6 +16,7 @@ packages=(
     sketchybar
     btop
     yazi
+    fzf
     lazygit
     neovim
 )
@@ -34,6 +35,11 @@ done
 casks=(
     hammerspoon
     kitty
+    anaconda
+    obsidian
+    font-maple-mono-nf-cn
+    betterdisplay
+    playcover-community
 )
 
 for cask in "${casks[@]}"; do
