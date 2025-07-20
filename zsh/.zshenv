@@ -1,5 +1,5 @@
-. "$HOME/.cargo/env"
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 export PATH="$HOME/.local/share/bitwarden:$PATH"
 export PATH="$HOME/.rd/bin:$PATH"
+export PATH="$PATH:$(brew --prefix rustup)/bin"
