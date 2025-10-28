@@ -1,6 +1,6 @@
 # nvm 
-zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd nvm node rush rushx git
+# zstyle ':omz:plugins:nvm' lazy yes
+# zstyle ':omz:plugins:nvm' lazy-cmd nvm node rush rushx git
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -15,6 +15,8 @@ update_theme() {
     export THEME_MODE="light"
     source "$ZSH_CUSTOM/patches/zsh-syntax-highlighting/themes/catppuccin_latte-zsh-syntax-highlighting.zsh"
   fi
+
+  source "$HOME/.config/lazygit/env"
 }
 
 # Initial theme setup
@@ -26,8 +28,6 @@ trap update_theme SIGUSR1
 # You can trigger theme update by running: kill -SIGUSR1 $$
 # To automate this when system theme changes, you'll need to set up a separate
 # script or service that detects theme changes and sends SIGUSR1 to terminal processes
-
-source "$HOME/.config/lazygit/env"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -130,27 +130,19 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if lsof -i:7890 >/dev/null 2>&1; then
-  PROXY_ADDR=127.0.0.1:7890
-  export https_proxy=http://$PROXY_ADDR
-  export http_proxy=http://$PROXY_ADDR
-  export all_proxy=socks5://$PROXY_ADDR
-  export proxy_all=socks5://$PROXY_ADDR
-fi
-
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # JAVA_OPTS="$JAVA_OPTS -DsocksProxyPort"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # lazygit
 alias lg="lazygit"
 
 # java
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 # alias
 alias n="nvim"
@@ -178,3 +170,16 @@ conda() {
   # Now execute the original command
   conda "$@"
 }
+
+
+# --- BEGIN FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
+# https://bytedance.sg.larkoffice.com/docx/SurId67UBoZxHwxe07Clr5Ufgog
+
+export FEDERATED_REPO_GIT_TELEMETRY_VERSION=1.2.0
+export GIT_TRACE2_EVENT="$HOME/.trace2/event"
+export GIT_TRACE2_EVENT_BRIEF=true
+export GIT_TRACE2_MAX_FILES=100000
+
+# --- END FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
+
+export PATH="$PATH:$(brew --prefix rustup)/bin"
