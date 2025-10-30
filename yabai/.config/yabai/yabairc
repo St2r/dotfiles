@@ -49,3 +49,4 @@ yabai -m rule --add app="^明日方舟$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add app="^Telegram$" manage=off
+yabai -m rule --add app="^1Password" manage=off

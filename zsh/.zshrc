@@ -171,15 +171,22 @@ conda() {
   conda "$@"
 }
 
-
-# --- BEGIN FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
-# https://bytedance.sg.larkoffice.com/docx/SurId67UBoZxHwxe07Clr5Ufgog
-
-export FEDERATED_REPO_GIT_TELEMETRY_VERSION=1.2.0
-export GIT_TRACE2_EVENT="$HOME/.trace2/event"
-export GIT_TRACE2_EVENT_BRIEF=true
-export GIT_TRACE2_MAX_FILES=100000
-
-# --- END FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
+# rancher desktop
+export PATH="$HOME/.rd/bin:$PATH"
 
 export PATH="$PATH:$(brew --prefix rustup)/bin"
+
+
+claude() {
+  ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic \
+  ANTHROPIC_API_KEY="sk-sOme6UafBfvidrz5xQ714RhTKc9jAN15xnVB2NVt73dZMp0O" \
+  ANTHROPIC_AUTH_TOKEN="sk-sOme6UafBfvidrz5xQ714RhTKc9jAN15xnVB2NVt73dZMp0O" \
+  command claude "$@"
+}
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
