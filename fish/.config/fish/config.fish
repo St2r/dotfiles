@@ -1,1 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+fish_config theme choose "Catppuccin Mocha"
+
+alias lg='lazygit'
