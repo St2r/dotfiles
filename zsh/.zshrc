@@ -176,17 +176,12 @@ export PATH="$HOME/.rd/bin:$PATH"
 
 export PATH="$PATH:$(brew --prefix rustup)/bin"
 
-
-claude() {
-  ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic \
-  ANTHROPIC_API_KEY="sk-sOme6UafBfvidrz5xQ714RhTKc9jAN15xnVB2NVt73dZMp0O" \
-  ANTHROPIC_AUTH_TOKEN="sk-sOme6UafBfvidrz5xQ714RhTKc9jAN15xnVB2NVt73dZMp0O" \
-  command claude "$@"
-}
-
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
   compinit
 fi
 
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/bytedance/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
