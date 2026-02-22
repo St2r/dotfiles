@@ -43,8 +43,8 @@ require("lazy").setup({
   ui = {
     border = "rounded",
     icons = {
-      loaded = "",
-      not_loaded = "",
+      loaded = " ",
+      not_loaded = " ",
     },
   },
 })

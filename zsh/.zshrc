@@ -185,3 +185,8 @@ fi
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/bytedance/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Added by Antigravity
+export PATH="/Users/bytedance/.antigravity/antigravity/bin:$PATH"
+
+. "$HOME/.cargo/env"
